@@ -43,7 +43,7 @@ class Request
      *
      * @var boolean
      */
-    protected $insecure = false;
+    protected $insecure = true;
 
     /**
      * The base URL of the Magento application
@@ -70,7 +70,10 @@ class Request
         $this->url = $baseUri;
         $params = [
             'verify'   => $verify,
-            'http_errors' => false
+            'http_errors' => false,
+            'headers' => array(
+                'User-Agent' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36 RuxitSynthetic/1.0 v6694921612 t38550 ath9b965f92 altpub cvcv=2'
+            )
         ];
         if ($this->url !== false) {
             $params['base_uri'] = $this->url;
