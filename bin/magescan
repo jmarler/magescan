@@ -8,7 +8,7 @@ ini_set('user_agent', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML
 try {
 
   $application = require __DIR__.'/../src/bootstrap.php';
-} catch (\Exception $e) {
+} catch (Exception $e) {
   echo "Caught: $e\n";
 }
 __HALT_COMPILER();
